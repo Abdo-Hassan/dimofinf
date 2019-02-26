@@ -1,0 +1,964 @@
+@import 'variables';
+@import 'mixins';
+
+body {
+  background-color: $body-color;
+  font-family: 'Roboto', sans-serif;
+}
+
+// helpers classes
+.cover {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@include lg {
+  .container {
+    max-width: 100%;
+  }
+}
+
+@include md {
+  .container {
+    max-width: 100%;
+  }
+}
+
+.md-container {
+  max-width: 100%;
+}
+
+.transition {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.shadow {
+  -webkit-box-shadow: 1px 2px 10px -5px #4E4E4E;
+  -moz-box-shadow: 1px 2px 10px -5px #4E4E4E;
+  -o-box-shadow: 1px 2px 10px -5px #4E4E4E;
+  box-shadow: 1px 2px 10px -5px #4E4E4E;
+}
+
+.clearfix {
+  clear: both;
+}
+
+hr {
+  border-top: 2px solid rgba(0, 0, 0, .1);
+  margin-bottom: 0;
+}
+
+// helpers classes
+// start header
+.top-bar {
+  background-color: #fff;
+  padding: 6px 0;
+
+  .icons {
+    float: right;
+
+    @include md {
+      float: none;
+    }
+
+    @include sm {
+      float: none;
+    }
+
+    ul {
+      margin-bottom: 0;
+      margin-top: 5px;
+
+      li {
+        display: inline-block;
+
+        a {
+          i {
+            @extend .transition;
+            text-decoration: none;
+            color: #fff;
+            background-color: #cacaca;
+            border-radius: 50%;
+            padding: 4px;
+            margin: 4px;
+          }
+
+          .fa-facebook-f {
+            padding: 4px 8px;
+
+            &:hover {
+              background-color: #3b5998;
+            }
+          }
+
+          .fa-twitter {
+            &:hover {
+              background-color: #1da1f2;
+            }
+          }
+
+          .fa-google-plus-g {
+            padding: 4px 3px;
+
+            &:hover {
+              background-color: #dd4b39;
+            }
+          }
+
+          .fa-dribbble {
+            &:hover {
+              background-color: #ea4c89;
+            }
+          }
+
+          .fa-instagram {
+            &:hover {
+              background-color: #c13584;
+            }
+          }
+
+          .fa-rss {
+            &:hover {
+              background-color: #f26522;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .lang {
+    margin-bottom: 6px;
+    margin-top: 6px;
+
+    @include sm {
+      margin-left: -6px;
+    }
+
+    .dropdown {
+      display: inline-block;
+      margin-right: 10px;
+
+      a {
+        color: #736c6c;
+        font-size: 13px;
+
+        @include md {
+          font-size: 10px;
+        }
+      }
+
+      .dropdown-menu {
+
+        .dropdown-item:focus,
+        .dropdown-item:hover {
+          background-color: initial;
+        }
+      }
+    }
+
+    .login {
+      display: inline-block;
+
+      a {
+        color: $second-color;
+
+        i {
+          margin-right: 10px;
+
+          @include md {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  span {
+    font-size: 12px;
+    margin-right: 13px;
+
+    @include md {
+      font-size: 10px;
+      margin-right: 8px;
+    }
+
+    @include sm {
+      font-size: 10px;
+      margin-right: 8px;
+    }
+  }
+}
+
+// end header
+// start navbar
+.navbar {
+  background-color: $second-color;
+  padding: 20px 15px;
+
+  @include sm {
+    padding: 10px 15px;
+  }
+
+  .navbar-toggler {
+    border: 0;
+  }
+
+  img {
+    @include md {
+      width: 130px;
+    }
+
+    @include sm {
+      width: 130px;
+    }
+  }
+
+  @include lg {
+    padding: 20px 40px;
+  }
+
+  @include md {
+    padding: 20px 40px;
+  }
+
+  .navbar-toggler {
+    @include lg {
+      padding: 4px 4px;
+    }
+
+    @include md {
+      padding: 4px 4px;
+    }
+
+    @include sm {
+      padding: 4px 4px;
+    }
+  }
+
+  .navbar-collapse {
+    .navbar-nav {
+      .nav-link {
+        color: #fff;
+        font-size: 12px;
+
+        @include xl {
+          padding-right: .2rem;
+          padding-left: .4rem;
+        }
+
+        &:hover {
+          color: $main-color;
+        }
+      }
+
+      .active>.nav-link,
+      .nav-link.active {
+        position: relative;
+        color: $main-color;
+
+        &:before {
+          position: absolute;
+          top: 0;
+          border-top: 1px solid #000;
+        }
+
+        @include lg {
+          margin-top: 15px;
+        }
+
+        @include md {
+          margin-top: 15px;
+        }
+
+        @include sm {
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+}
+
+// end navbar
+// start main slider
+.slider {
+  .carousel-indicators {
+
+    .active {
+      background-color: $second-color;
+      border: none;
+    }
+
+    li {
+      bottom: 65px;
+      width: 36px;
+      height: 10px;
+      margin-right: 13px;
+      margin-left: 7px;
+      background-color: transparent;
+      border: 2px solid #fff;
+
+      @include sm {
+        width: 22px;
+        height: 9px;
+      }
+    }
+
+    @include xl {
+      left: 6px;
+      bottom: -25px;
+    }
+
+    @include lg {
+      bottom: -40px;
+      left: 45px;
+    }
+
+    @include md {
+      bottom: -58px;
+      left: 26px;
+    }
+
+    @include sm {
+      bottom: -66px;
+      left: 0;
+    }
+  }
+
+  .carousel-inner {
+    position: relative;
+    // min-height: 900px;
+
+    .slider-text {
+
+      h3 {
+        position: absolute;
+        color: #fff;
+        z-index: 3;
+        bottom: 29%;
+        text-align: center;
+        font-weight: bold;
+
+        @include xl {
+          font-size: 22px;
+        }
+
+        @include lg {
+          font-size: 18px;
+        }
+
+        @include md {
+          font-size: 15px;
+          bottom: 35%;
+        }
+
+        @include sm {
+          font-size: 11px;
+          bottom: 42%;
+        }
+
+        span {
+          font-size: 25px;
+          display: inline-block;
+          margin-top: 15px;
+
+          @include xl {
+            font-size: 18px;
+          }
+
+          @include lg {
+            font-size: 17px;
+          }
+
+          @include md {
+            font-size: 14px;
+          }
+
+          @include sm {
+            font-size: 14px;
+            margin-top: 7px;
+          }
+        }
+
+
+      }
+
+      input {
+        position: absolute;
+        z-index: 3;
+        padding: 24px;
+        border-radius: 2.25rem;
+        border: 5px solid #7c7c7c;
+        width: 600px;
+        bottom: 17%;
+
+        @include lg {
+          padding: 22px;
+          width: 554px;
+        }
+
+        @include md {
+          padding: 18px;
+          width: 432px;
+        }
+
+        @include sm {
+          padding: 20px;
+          width: 356px;
+        }
+      }
+    }
+
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #1f4b6878;
+      z-index: 2;
+    }
+  }
+}
+
+// end main slider
+// start news section
+.news {
+  padding: 30px;
+
+  @include md {
+    padding: 20px 10px;
+  }
+
+  @include sm {
+    padding: 20px 0;
+  }
+
+  .blog {
+    margin-bottom: 15px;
+    @extend .shadow;
+
+    .card-body {
+      padding: 5px 20px;
+
+      .card-title {
+        color: #1f4b68bf;
+        margin: 10px 0;
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 1.6;
+      }
+
+      .card-text {
+        line-height: 2;
+        font-size: 12px;
+        color: #888;
+
+        @include md {
+          font-size: 11px;
+        }
+      }
+
+      a {
+        color: $second-color;
+        line-height: 1.9;
+        font-size: 15px;
+
+        @include sm {
+          font-size: 13px;
+          margin-top: 5px;
+        }
+      }
+
+      .blog-icons {
+        margin-top: 10px;
+        margin-bottom: 0;
+
+        li {
+          display: inline-block;
+          color: $second-color;
+          padding: 0 6px;
+          font-size: 13px;
+
+          @include lg {
+            padding: 0;
+          }
+
+          @include sm {
+            padding: 0;
+            font-size: 11px;
+          }
+
+          i {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .booking {
+    margin-bottom: 20px;
+    @extend .shadow;
+
+    @include xl {
+      margin-bottom: 66px;
+    }
+
+    @include lg {
+      margin-bottom: 15px;
+    }
+
+    .card-body {
+      padding: 10px 20px 15px;
+
+      @include xl {
+        padding: 10px 12px 15px;
+      }
+
+      .card-title {
+        color: #1f4b68bf;
+        margin: 10px 0;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 1.6;
+      }
+
+      a {
+        font-size: 13px;
+        background-color: #01b9ff;
+        border-color: #01b9ff;
+      }
+
+      span {
+        color: #888;
+        margin-top: 5px;
+
+        @include xl {
+          float: none !important;
+          margin-left: 22px;
+          font-size: 15px;
+        }
+
+        .dollars {
+          color: $main-color;
+          letter-spacing: 1.5px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .event {
+    @extend .shadow;
+
+    .card-img-overlay {
+      background-color: #1f4b6896;
+      padding: 20px 0;
+
+      .dropdown {
+        padding: 0 10px;
+
+        .dropdown-toggle {
+          background-color: transparent;
+          font-size: 20px;
+        }
+
+        .dropdown-menu {
+          .dropdown-item {
+            font-size: 14px;
+
+            @include xl {
+              font-size: 13px;
+            }
+
+            @include lg {
+              font-size: 11px;
+            }
+
+            @include sm {
+              font-size: 11px;
+            }
+          }
+        }
+
+        button::after {
+          color: $second-color;
+          margin-left: 0;
+        }
+      }
+
+      .card-footer {
+        position: absolute;
+        bottom: 0;
+        border-top: 1px dotted $second-color;
+        width: 100%;
+        padding: 5px 10px;
+
+        @include xl {
+          padding: 5px 4px;
+        }
+
+        @include lg {
+          padding: 5px 10px;
+        }
+
+        .event-1 {
+          p {
+            color: #fff;
+            font-size: 13px;
+            margin: 8px 0 0 8px;
+            text-align: center;
+
+            @include xl {
+              margin: 7px 0 0 0;
+            }
+
+            @include lg {
+              font-size: 10px;
+              margin: 3px 0 0 0;
+            }
+
+            span {
+              font-size: 30px;
+              font-weight: bold;
+            }
+          }
+        }
+
+        .event-2 {
+          margin-top: 15px;
+
+          @include xl {
+            margin-top: 18px;
+          }
+
+          h5 {
+            color: $main-color;
+            background-color: $second-color;
+            margin-bottom: 5px;
+            font-size: 17px;
+            width: 60%;
+            padding: 7px 10px;
+            border-radius: 9px;
+            text-align: center;
+            font-weight: bold;
+
+            @include xl {
+              font-size: 14px;
+            }
+
+            @include lg {
+              padding: 7px 4px;
+              font-size: 12px;
+              width: 44%;
+              font-size: 12px;
+            }
+          }
+
+          p {
+            font-size: 13px;
+            color: #fff;
+            margin-bottom: 5px;
+
+            @include xl {
+              font-size: 12px;
+            }
+
+            @include lg {
+              font-size: 11px;
+            }
+          }
+        }
+
+      }
+    }
+
+    .card-body {
+      padding: 0;
+    }
+  }
+}
+
+// end news section
+// start album slider
+.aSlider {
+  padding-bottom: 20px;
+
+  .weather {
+    @extend .shadow;
+    border-radius: 15px;
+
+    .weather-top {
+      padding: 15px 12px 0;
+      z-index: 999;
+
+      h4 {
+        font-size: 20px;
+        color: #013a5f;
+        font-weight: bold;
+      }
+
+      h5 {
+        font-size: 15px;
+        color: $main-color;
+
+        i {
+          margin-right: 10px;
+        }
+
+        .plus {
+          float: right;
+          cursor: pointer;
+        }
+      }
+
+      ul {
+        margin-bottom: 0;
+        margin-top: 16px;
+
+        .active {
+          margin-left: 0;
+          color: $main-color;
+          border-bottom: 2px solid $main-color;
+        }
+
+        li {
+          display: inline-block;
+          margin-left: 15px;
+          cursor: pointer;
+
+          &:hover {
+            color: $main-color;
+            border-bottom: 2px solid $main-color;
+          }
+
+          @include lg {
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+
+    .card-img-overlay {
+      padding: 155px 0;
+
+      @include md {
+        padding: 190px 0;
+      }
+
+      .weather-icon {
+        span {
+          font-size: 65px;
+          color: #fff;
+
+          @include lg {
+            font-size: 40px;
+          }
+
+          @include md {
+            font-size: 65px;
+          }
+
+          @include sm {
+            font-size: 50px;
+          }
+        }
+      }
+    }
+
+    .card-body {
+      padding: 0;
+      z-index: 999;
+
+      ul {
+        margin-bottom: 0;
+        margin-top: 20px;
+
+        .active {
+          color: #1f4b68bf;
+        }
+
+        li {
+          @extend .transition;
+          display: inline-block;
+          padding: 0 15px;
+          font-size: 20px;
+          color: #dad8d8;
+          cursor: pointer;
+
+          @include lg {
+            padding: 0 5px;
+          }
+
+          &:hover {
+            color: #1f4b68bf;
+          }
+
+          i {
+            @include lg {
+              font-size: 40px;
+              padding: 0;
+            }
+          }
+
+          p {
+            @include lg {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .slider {
+    background-color: #fff;
+    border-radius: 10px;
+    @extend .shadow;
+    margin-bottom: 20px;
+
+    .owl-carousel {
+      img {
+        margin: 32px 0;
+        padding: 0 10px;
+      }
+
+      .owl-dots {
+        margin-top: 0;
+        background-color: #f2f2f2;
+        padding: 15px 0;
+
+        .owl-dot {
+          &.active {
+            span {
+              background-color: $main-color;
+            }
+          }
+
+          &:hover span {
+            background-color: $main-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+// end album slider
+// start table 
+.table {
+
+  table {
+    border-radius: 10px;
+    @extend .shadow;
+
+    tbody {
+      padding: 24px 12px;
+    }
+
+    td,
+    th {
+      @include md {
+        padding: 15px 2px;
+      }
+    }
+
+    tr {
+      input{
+        width:40px;
+        height: 40px;
+        cursor: pointer;
+      }
+      @include xl {
+        font-size: 14px;
+      }
+
+      @include lg {
+        font-size: 13px;
+      }
+
+      @include md {
+        font-size: 12px;
+      }
+
+      @include sm {
+        font-size: 12px;
+      }
+    }
+
+    i {
+      cursor: pointer;
+    }
+
+    tbody {
+      .banned {
+        background-color: rgba(0, 0, 0, .09);
+      }
+
+      .strip-1 {
+        background-color: rgba(0, 0, 0, .05);
+      }
+
+      .strip-2 {
+        background-color: #fff;
+      }
+
+      tr {
+        .ban {
+          text-decoration: line-through;
+        }
+      }
+
+    }
+  }
+}
+
+// end table 
+// start footer
+footer {
+  position: relative;
+  padding: 30px;
+
+  @include sm {
+    padding: 30px 0;
+  }
+
+  background-color: $second-color;
+  color: #fff;
+
+  p {
+    @include sm {
+      margin-left: 40px;
+    }
+  }
+
+  .scroll-up {
+    position: absolute;
+    bottom: 23px;
+    color: $second-color;
+    background-color: #033454b0;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    @include sm {
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+// end footer

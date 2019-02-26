@@ -1,0 +1,156 @@
+@import 'variables';
+@import 'mixins';
+
+@font-face {
+  src: url('../fonts/DroidKufi-Regular.ttf');
+  font-family: 'kufi';
+}
+
+body {
+  font-family: 'Kufi';
+}
+
+// start header
+.top-bar {
+  .icons {
+    float: none;
+
+    ul {
+      @include md {
+        padding: 0;
+        float: right;
+      }
+
+      @include sm {
+        padding: 0;
+        float: right;
+      }
+    }
+  }
+
+  .lang {
+    float: right;
+
+    .dropdown {
+      margin-right: 0;
+
+      a {
+        padding-bottom: 0;
+
+        @include md {
+          padding: 0;
+          margin-top: 6px;
+        }
+      }
+    }
+  }
+}
+
+// end header
+// start main slider
+.slider {
+  .carousel-indicators {
+    @include sm {
+      left: 35px;
+    }
+  }
+}
+
+// end main slider
+// start news section
+.news {
+  .blog {
+    .card-body {
+      .card-title {
+        text-align: right;
+      }
+
+      .card-text {
+        text-align: right;
+      }
+
+      .blog-icons {
+        float: right;
+        padding: 0;
+
+        li {
+          i {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .booking {
+    .card-body {
+      .card-title {
+        text-align: right;
+      }
+    }
+  }
+}
+
+// end news section
+// start album slider
+.aSlider {
+  .weather {
+    .weather-top {
+      text-align: right;
+
+      h5 {
+        .plus {
+          float: left;
+        }
+
+        i {
+          margin-right: 0;
+          margin-left: 10px;
+        }
+      }
+
+      ul {
+        padding: 0;
+
+        .active {
+          margin-left: 15px;
+        }
+      }
+    }
+
+    .card-body {
+      ul {
+        padding: 0;
+      }
+    }
+  }
+}
+
+// end album slider
+// start table section
+.table {
+  text-align: right;
+}
+
+// end table section
+// start footer
+footer {
+  p {
+    @include md {
+      font-size: 13px;
+    }
+
+    @include sm {
+      font-size: 10px;
+      margin-right: 40px;
+      margin-left: 0;
+    }
+  }
+
+  .scroll-up {
+    // left: 200px;
+    float: left;
+  }
+}
+
+// end footer
